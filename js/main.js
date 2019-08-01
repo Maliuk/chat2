@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://localhost:8080')
+const ws = new WebSocket('wss://localhost:433')
 
 ws.onopen = () => {
     console.log('Connected to the signaling server')
