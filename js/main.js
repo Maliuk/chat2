@@ -1,4 +1,4 @@
-const ws = new WebSocket('wss://localhost:433')
+const ws = new WebSocket('wss://chat.hungryprogrammers.com:433')
 
 ws.onopen = () => {
     console.log('Connected to the signaling server')
