@@ -13,7 +13,7 @@
 });*/
 
 // *************************************************************** //
-const ws = new WebSocket('wss://chat.hungryprogrammers.com:8433')
+const ws = new WebSocket('wss://chat.hungryprogrammers.com:433')
 
 ws.onopen = () => {
     console.log('Connected to the signaling server')
