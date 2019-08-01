@@ -1,18 +1,3 @@
-/*document.querySelector('#get-access').addEventListener('click', async function init(e) {
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({
-            video: true
-        })
-        document.querySelector('video').srcObject = stream
-        document.querySelector('#get-access').setAttribute('hidden', true)
-        setTimeout(() => { track.stop() }, 3 * 1000)
-    } catch (error) {
-        alert('${error.name}')
-        console.error(error)
-    }
-});*/
-
-// *************************************************************** //
 const ws = new WebSocket('ws://localhost:8080')
 
 ws.onopen = () => {
