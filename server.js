@@ -1,6 +1,29 @@
-const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: 8080 })
-const users = {}
+const WebSocket = require('ws');
+const fs = require('fs');
+const https = require('https');
+const WebSocketServer = require('ws').Server;
+
+const users = {};
+
+var privateKey  = fs.readFileSync('sslcert/key.pem', 'utf8');
+var certificate = fs.readFileSync('sslcert/cert.pem', 'utf8');
+
+var credentials = {key: privateKey, cert: certificate};
+var express = require('express');
+var app = express();
+
+//pass in your express app and credentials to create an https server
+var httpsServer = https.createServer(credentials, app);
+httpsServer.listen(8443);
+
+//... bunch of other express stuff here ...
+
+//var WebSocketServer = require('ws').Server;
+const wss = new WebSocketServer({
+    server: httpsServer
+});
+
+//const wss = new WebSocket.Server({ port: 8080 });
 
 const sendTo = (ws, message) => {
     ws.send(JSON.stringify(message))
