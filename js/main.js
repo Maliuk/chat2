@@ -13,7 +13,7 @@
 });*/
 
 // *************************************************************** //
-const ws = new WebSocket('ws://localhost:8080')
+const ws = new WebSocket('ws://5.181.108.22:8080')
 
 ws.onopen = () => {
     console.log('Connected to the signaling server')
