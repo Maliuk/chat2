@@ -14,11 +14,8 @@ var app = express();
 
 //pass in your express app and credentials to create an https server
 var httpsServer = https.createServer(credentials, app);
-httpsServer.listen(8443);
+httpsServer.listen(8080);
 
-//... bunch of other express stuff here ...
-
-//var WebSocketServer = require('ws').Server;
 const wss = new WebSocketServer({
     server: httpsServer
 });
