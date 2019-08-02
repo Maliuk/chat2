@@ -40,7 +40,7 @@
             SetEnvIf Origin ":" IS_CORS
             Header set Access-Control-Allow-Origin "*" env=IS_CORS
         </FilesMatch>
-    </IfModule>
+    </IfModule>1
 </IfModule>
 
 # ----------------------------------------------------------------------
