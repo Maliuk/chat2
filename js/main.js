@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://127.0.0.1:433')
+const ws = new WebSocket('wss://127.0.0.1:1234')
 
 ws.onopen = () => {
     console.log('Connected to the signaling server')
@@ -81,6 +81,7 @@ const handleLogin = async success => {
         }
 
         document.querySelector('video#local').srcObject = localStream
+        document.querySelector('video#local').muted = true;
 
         const configuration = {
             iceServers: [{ url: 'stun:stun2.1.google.com:19302' }]
