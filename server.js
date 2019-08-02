@@ -3,8 +3,8 @@ const fs = require('fs');
 const st = require('node-static');
 const file = new (st.Server)();
 
-var hskey = fs.readFileSync('key.pem');
-var hscert = fs.readFileSync('cert.cert');
+var hskey = fs.readFileSync('sslcert/key.pem');
+var hscert = fs.readFileSync('sslcert/cert.pem');
 
 var options = {
     key: hskey,
@@ -13,7 +13,7 @@ var options = {
 
 var app = https.createServer(options, function (req, res) {
     file.serve(req, res);
-}).listen(8080);
+}).listen(1234);
 
 const WebSocket = require('ws')
 //const wss = new WebSocket.Server({ port: 433 })

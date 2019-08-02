@@ -1,4 +1,4 @@
-const ws = new WebSocket('wss://5.181.108.22:8080')
+const ws = new WebSocket('wss://chat.hungryprogrammers.com:1234')
 
 ws.onopen = () => {
     console.log('Connected to the signaling server')
@@ -84,7 +84,13 @@ const handleLogin = async success => {
         document.querySelector('video#local').muted = true;
 
         const configuration = {
-            iceServers: [{ url: 'stun:stun2.1.google.com:19302' }]
+            iceServers: [
+                { url: 'stun:stun1.l.google.com:19302' },
+                {
+                    url: 'turn:numb.viagenie.ca',
+                    credential: 'muazkh',
+                    username: 'webrtc@live.com'
+                }]
         }
 
         connection = new RTCPeerConnection(configuration)
