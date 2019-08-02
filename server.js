@@ -22,8 +22,6 @@ const wss = new WebSocket.Server({
 })
 
 
-
-
 const users = {}
 
 const sendTo = (ws, message) => {
